@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Processing</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            color: #121212;
+            font-family: "Lato", sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #d6d4ee;
+        }
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        div[style*="margin: 16px 0"] {
+            margin: 0;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        table {
+            border-spacing: 0;
+            table-layout: auto;
+        }
+
+        .font-sm {
+            font-size: 14px;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        td {
+            vertical-align: top;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="box-shadow: 0px 2px 24px 0px #00000026; padding: 20px 20px">
+        <table cellpadding="0" cellspacing="0" border="0" align="center" valign="middle"
+            style="margin: 0 auto; max-width:640px">
+            <tr>
+                <td align="center">
+                    <table cellpadding="0" cellspacing="0" border="0" valign="middle" width="100%">
+                        <!-- TOP -->
+                        <tr>
+                            <td style="
+              height: 10px;
+              background: radial-gradient(
+                350.36% 238774.9% at 5.62% -128.28%,
+                #ffe0be 0%,
+                #d6d4ee 100%
+              );
+            "></td>
+                        </tr>
+
+                        <!--========== Header ==========-->
+                        <tr>
+                            <td style="
+                    width: 100%;
+                    background-color: #fff;
+                    padding: 25px 17px 46px;
+                    border-radius: 0;
+                  ">
+                                <!-- Top Data -->
+                                <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                    style="margin: 0 auto ; ">
+                                    <tr>
+                                        <td style="display: block; padding-bottom: 20px" align="center">
+                                            <img src="./images/logo.png" alt="logo" style="width: 120px;">
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section Body -->
+                                    <tr>
+                                        <!-- Top Message -->
+                                        <td style="
+                          border-top: 1px solid #d6d4ee;
+                          border-bottom: 1px solid #d6d4ee;
+                          padding: 14px 0 26px;
+                        ">
+                                            <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                                style="margin: 0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <td align="center">
+                                                            <img src="./images/check.png" alt="check">
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr align="center">
+                                                        <td align="center">
+                                                            <table cellpadding="0" cellspacing="0" border="0"
+                                                                valign="middle" style="margin: 0" width="100%">
+                                                                <tr>
+                                                                    <td style="
+                                        color: #28b446;
+                                        font-size: 21px;
+                                        font-weight: 500;
+                                        text-align: center;
+                                        line-height: 1.35;
+                                        padding-top: 10px;
+                                        padding-bottom: 5px;
+                                      ">
+                                                                        Your order is under processing
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- order section -->
+                                    <tr>
+                                        <td style="
+                          padding: 13px 12px 10px;
+                          border-bottom: 1px solid #d6d4ee;
+                        ">
+                                            <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                                style="margin: 0" width="100%">
+                                                <tr>
+                                                    <td style="font-size: 13px; font-weight: 500">
+                                                        Order Number {{ order_number }}
+                                                    </td>
+                                                    <td style="
+                                font-size: 13px;
+                                font-weight: 400;
+                                text-align: end;
+                              ">
+                                                        Order Date: {{ order_date }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- order progress -->
+                                    <tr>
+                                        <td style="
+                          padding: 28px 0;
+                          text-align: center;
+                          border-bottom: 1px solid #d6d4ee;
+                        ">
+                                            <img src="./images/progress-1.png" alt="progress" style="width: 100%;">
+                                        </td>
+                                    </tr>
+
+                                    <!-- Start List Items -->
+                                    <tr>
+                                        <td style="
+                          padding: 20px 0;
+                          z-index: 99;
+                          position: relative;
+                          width: 100%;
+                        ">
+                                            <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                                width="100%">
+                                                <tbody>
+                                                    {% for item in items %}
+                                                    <tr>
+                                                        <td style="
+                                  width: 100%;
+                                  padding: 15px 0px 15px 0px;
+                                  /* margin-bottom: 18px; */
+                                  border-bottom: 1px solid #d6d4ee;
+                                ">
+                                                            <table cellpadding="0" cellspacing="0" border="0"
+                                                                valign="top" style="margin: 0" width="100%">
+                                                                <tr>
+                                                                    <td align="right" valign="middle" width="80">
+                                                                        <img editable src={{ item.thumbnail }}
+                                                                            alt="image"
+                                                                            style="width: 100px; height: 100px" />
+                                                                    </td>
+
+                                                                    <td style="
+                                        vertical-align: top;
+                                        padding-left: 15px;
+                                        height: 100;
+                                      ">
+                                                                                                                                                <div style="height: 50%;">
+
+                                                                            <p>
+                                                                                <span style="
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 6.4px;
+  ">{{ item.name }}</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                        <div style="margin: 30px 0 0;">
+                                                                            <p style="margin: 0;">
+                                                                                <span style="
+    font-size: 12px;
+    font-weight: 400;
+  ">X{{ item.quantity }}</span>
+                                                                            </p>
+                                                                            <p style="margin: 0;">
+                                                                                <span style="
+    font-size: 12px;
+    font-weight: 400;
+  ">{{ order_currency }} {{ item.price }} </span>
+                                                                            </p>
+                                                                        </div>
+                                                                    
+                                                                    </td>
+
+                                                                    <td style="
+                                        vertical-align: bottom;
+                                        text-align: end;
+                                        font-size: 13px;
+                                        font-weight: 600;
+                                      ">
+                                                                        {{ order_currency }} {{ item.total }}
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Start Items specifications -->
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                                style="margin: 0" width="100%">
+                                                <tr>
+                                                    <td style="
+                                padding: 0 20px 20px 0px;
+                                width: 50%;
+                                border-bottom: 1px solid #d6d4ee;
+                              ">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            valign="middle" style="margin: 0" width="100%">
+                                                            <!-- Shipping information -->
+                                                            <tr>
+                                                                <td style="
+                                      color: #121212;
+                                      font-size: 18px;
+                                      font-weight: 600;
+                                      line-height: 21.13px;
+                                      padding-bottom: 21px;
+                                      letter-spacing: 0.45px;
+                                    ">
+                                                                    Shipping information
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- Your Name -->
+                                                            <tr>
+                                                                <td style="padding-bottom: 14px">
+                                                                    <span style="
+                                        color: #6c757d;
+                                        font-size: 12px;
+                                        font-weight: 400;
+                                        line-height: 24px;
+                                      ">Your Name</span>
+                                                                    <br />
+                                                                    <span style="
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 16.44px;
+                                      ">{{ first_name }} {{ last_name }}</span>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- Email Address -->
+                                                            <tr>
+                                                                <td style="padding-bottom: 14px">
+                                                                    <span style="
+                                        color: #6c757d;
+                                        font-size: 12px;
+                                        font-weight: 400;
+                                        line-height: 24px;
+                                      ">Email Address</span>
+                                                                    <br />
+                                                                    <span style="
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 16.44px;
+                                      ">{{ email }}</span>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- mobile number -->
+                                                            <tr>
+                                                                <td style="padding-bottom: 14px">
+                                                                    <span style="
+                                        color: #6c757d;
+                                        font-size: 12px;
+                                        font-weight: 400;
+                                        line-height: 24px;
+                                      ">Mobile Number</span>
+                                                                    <br />
+                                                                    <span style="
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        line-height: 16.44px;
+                                      ">{{ phone }}</span>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- ===== Home ====== -->
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="0" cellspacing="0" border="0"
+                                                                        valign="middle" style="margin: 0" width="100%">
+                                                                        <tr style="display: table-cell">
+                                                                            <td style="
+                                            padding-bottom: 14px;
+                                            display: table-cell;
+                                          ">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">Street & Building No.</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_address }}</span>
+                                                                            </td>
+                                                                            <td style="
+                                            padding-bottom: 14px;
+                                            display: table-cell;
+                                            padding-left: 20px;
+                                          ">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">Floor</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_floor }}</span>
+                                                                            </td>
+                                                                            <td style="
+                                            padding-bottom: 14px;
+                                            display: table-cell;
+                                            padding-left: 20px;
+                                            padding-left: 20px;
+                                          ">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">Apartment</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_apart }}</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!--=== Area ===-->
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="0" cellspacing="0" border="0"
+                                                                        valign="middle" style="margin: 0" width="100%">
+                                                                        <tr style="display: table-cell">
+                                                                            <td style="display: table-cell">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">Area</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_area }}</span>
+                                                                            </td>
+                                                                            <td style="
+                                            padding-left: 20px;
+                                            display: table-cell;
+                                          ">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">City</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_city }}</span>
+                                                                            </td>
+                                                                            <td style="
+                                            padding-left: 20px;
+                                            display: table-cell;
+                                          ">
+                                                                                <span style="
+                                              color: #6c757d;
+                                              font-size: 12px;
+                                              font-weight: 400;
+                                              line-height: 24px;
+                                            ">Country</span>
+                                                                                <br />
+                                                                                <span style="
+                                              font-size: 14px;
+                                              font-weight: 600;
+                                              line-height: 16.44px;
+                                            ">{{ billing_country }}</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Total -->
+                                                <tr>
+                                                    <td style="padding: 22px 0px 24px 0px">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                            valign="middle" style="margin: 0" width="100%">
+                                                            <tr>
+                                                                <td style="
+                                      color: #454545;
+                                      font-size: 12px;
+                                      font-weight: 400;
+                                      line-height: 22px;
+                                      padding-bottom: 20px;
+                                    ">
+                                                                    Subtotal
+                                                                </td>
+                                                                <td style="
+                                      color: #121212;
+                                      font-size: 13px;
+                                      font-weight: 600;
+                                      line-height: 22px;
+                                      text-align: end;
+                                      padding-bottom: 20px;
+                                    ">
+                                                                    {{ order_subtotal_to_display }} {{ order_currency }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="
+                                      color: #454545;
+                                      font-size: 12px;
+                                      font-weight: 400;
+                                      line-height: 22px;
+                                      padding-bottom: 25px;
+                                    ">
+                                                                    Shipping
+                                                                </td>
+                                                                <td style="
+                                      color: #121212;
+                                      font-size: 13px;
+                                      font-weight: 600;
+                                      line-height: 22px;
+                                      text-align: end;
+                                      padding-bottom: 25px;
+                                    ">
+                                                                    {{ shipping_to_display }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="
+                                      color: #454545;
+                                      font-size: 12px;
+                                      font-weight: 400;
+                                      line-height: 22px;
+                                      padding-bottom: 4px;
+                                    ">
+                                                                    Total
+                                                                </td>
+                                                                <td style="
+                                      color: #121212;
+                                      font-size: 13px;
+                                      font-weight: 600;
+                                      line-height: 22px;
+                                      text-align: end;
+                                    ">
+                                                                    {{ order_total }} EGP
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding: 0 20px 0 30px">
+                                                        <a href="#" style="
+                                  display: block;
+                                  text-align: center;
+                                  height: 44px;
+                                  line-height: 44px;
+                                  background-color: black;
+                                  color: white;
+                                  font-size: 14px;
+                                  text-decoration: none;
+                                  font-weight: 400;
+                                  letter-spacing: 0.44px;
+                                ">View Order Details</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Social Media -->
+                                    <tr>
+                                        <td style="padding: 41px 20px 0 20px">
+                                            <table cellpadding="0" cellspacing="0" border="0" valign="middle"
+                                                style="margin: 0" width="100%">
+                                                <tr>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr>
+                                                                <td style="padding-right: 39px">
+                                                                    <a href="#">
+                                                                        <img src="./images/001-facebook.png"
+                                                                            alt="facebook">
+                                                                    </a>
+                                                                </td>
+                                                                <td style="
+                                      padding-right: 39px;
+                                      vertical-align: middle;
+                                    ">
+                                                                    <a href="#">
+                                                                        <img src="./images/003-twitter.png"
+                                                                            alt="twitter">
+                                                                    </a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">
+                                                                        <img src="./images/004-instagram.png"
+                                                                            alt="instagram">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
